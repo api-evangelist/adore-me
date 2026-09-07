@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.adoreme.android",
+      "sha256_cert_fingerprints": [
+        "F7:B2:6C:AC:B5:18:FC:4A:C3:8A:A8:20:97:3C:4A:79:50:FE:DE:F5:FE:E3:6B:9F:A2:C4:1A:53:72:CE:BD:76"
+      ]
+    }
+  }
+]

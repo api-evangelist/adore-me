@@ -1,0 +1,92 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  npm registry search, PyPI, RubyGems, crates.io, Packagist, NuGet, Maven Central,
+  pkg.go.dev, the github.com/adore-me organization, and the adoreme.com site itself
+sdk_count: 0
+official_sdk_count: 0
+note: >-
+  Adore Me publishes no public API and ships no first-party API client library in any
+  package registry. No `SDKs` pointer is wired in apis.yml, because there is no SDK to
+  point at. The only first-party distributables the company ships are its two consumer
+  mobile applications, recorded under mobile_apps below; those are end-user apps, not
+  client libraries, and they are not addressable from a package registry.
+packages: []
+registries_probed:
+- registry: npm
+  query: adoreme
+  result: HTTP 200, 0 results. No @adoreme or @adore-me scope exists.
+- registry: pypi
+  query: adoreme
+  result: HTTP 404. No package at adoreme or adore-me.
+- registry: rubygems
+  result: No first-party gem found.
+- registry: maven-central
+  result: No first-party artifact found.
+- registry: nuget
+  result: No first-party artifact found.
+- registry: pkg.go.dev
+  result: No first-party module found.
+- registry: packagist
+  result: No first-party package found.
+- registry: crates.io
+  result: No first-party crate found.
+- registry: cdn
+  result: >-
+    No CDN-distributed first-party library found. The storefront loads its own bundles
+    from adoreme.com under hashed Next.js build paths, which are application code rather
+    than a consumable distribution, so no version can be read from a pinned URL.
+mobile_apps:
+- platform: ios
+  name: Adore Me Lingerie & Womenswear
+  bundle_id: com.adoreme.qmobile
+  team_id: XSW8SB63M8
+  url: https://apps.apple.com/us/app/adore-me-lingerie-womenswear/id661053119
+  official: true
+  version: null
+  published: null
+  note: >-
+    Bundle id and Apple team id read from the verbatim
+    /.well-known/apple-app-site-association document saved in well-known/. The App Store
+    does not expose an anonymous registry metadata endpoint the way a package registry
+    does, so version and published date are recorded null rather than guessed.
+- platform: android
+  name: Adore Me Lingerie & Womenswear
+  package: com.adoreme.android
+  url: https://play.google.com/store/apps/details?id=com.adoreme.android
+  official: true
+  version: null
+  published: null
+  note: >-
+    Package name read from the verbatim /.well-known/assetlinks.json document saved in
+    well-known/. Google Play publishes no anonymous machine-readable version endpoint,
+    so version and published date are recorded null rather than guessed.
+github_organization:
+  url: https://github.com/adore-me
+  name: Adore Me Inc.
+  location: New York, NY, USA
+  blog: http://www.adoreme.com
+  created: '2015-12-18'
+  public_repos: 0
+  note: >-
+    The organization is real, first-party (its profile names Adore Me Inc. and links
+    www.adoreme.com) and has existed since December 2015, but it publishes zero public
+    repositories. A `GitHubOrganization` pointer is wired in apis.yml because the org
+    demonstrably exists and belongs to the company; nothing is derived from it, because
+    there is no public code to derive from.
+x-evidence:
+- url: https://registry.npmjs.org/-/v1/search?text=adoreme&size=15
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://pypi.org/pypi/adoreme/json
+  http_status: 404
+  fetched: '2026-09-07'
+- url: https://api.github.com/orgs/adore-me
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://apps.apple.com/us/app/adore-me-lingerie-womenswear/id661053119
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://play.google.com/store/apps/details?id=com.adoreme.android
+  http_status: 200
+  fetched: '2026-09-07'

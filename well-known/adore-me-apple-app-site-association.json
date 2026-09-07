@@ -1,0 +1,14 @@
+{
+  "webcredentials": {
+    "apps": ["XSW8SB63M8.com.adoreme.qmobile"]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "XSW8SB63M8.com.adoreme.qmobile",
+        "paths": ["*"]
+      }
+    ]
+  }
+}

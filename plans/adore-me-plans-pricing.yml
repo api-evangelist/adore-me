@@ -1,0 +1,40 @@
+generated: '2026-09-07'
+method: searched
+source: https://www.adoreme.com/adore-me-premier
+plan_count: 0
+note: >-
+  Adore Me publishes no API plans, no API pricing page, and no developer tiers, because it
+  operates no public API. plan_count is 0 for the API surface. The company does publish
+  consumer commerce pricing, recorded below as context only — it prices lingerie and a
+  retail membership, not API access, and it must not be read as an API plan. No `Pricing`
+  link pointer is wired in apis.yml for the same reason: pointing the API-pricing check at
+  a lingerie membership page would credit Adore Me with a developer pricing surface it
+  does not have.
+plans: []
+consumer_pricing_context:
+- name: Premier
+  url: https://www.adoreme.com/adore-me-premier
+  price: 12.95
+  currency: USD
+  billing_period: annual
+  recurring: false
+  note: >-
+    Described by Adore Me as "a one-time annual add-on. Not a subscription", added to the
+    cart before checkout. Includes 10% off eligible orders for a year and free U.S.
+    shipping on orders of $50 or more, applied automatically at checkout.
+- name: Elite Box (home try-on)
+  url: https://www.adoreme.com/elite-box-ending
+  price: null
+  currency: USD
+  status: ending
+  note: >-
+    The monthly home try-on subscription the brand was built on. The site's own sitemap
+    carries /elite-box-ending and /elite-box-ending-international wind-down pages, so it
+    is recorded as ending rather than as a current tier, and no price is asserted.
+x-evidence:
+- url: https://www.adoreme.com/adore-me-premier
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://www.adoreme.com/ways-to-shop
+  http_status: 200
+  fetched: '2026-09-07'

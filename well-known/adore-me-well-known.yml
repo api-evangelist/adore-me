@@ -1,0 +1,93 @@
+generated: '2026-09-07'
+method: probed
+source: live probes of every Adore Me host on 2026-09-07
+note: >-
+  No `WellKnown` pointer is wired in apis.yml. Every path on the pipeline's named
+  discovery list — security.txt, openid-configuration, oauth-authorization-server,
+  api-catalog, ai-plugin.json — returns HTTP 404 on the apex and www hosts. The two
+  documents that ARE served (assetlinks.json and apple-app-site-association) are mobile
+  app-association files for the Adore Me iOS and Android apps, not an API discovery or
+  catalog surface, so recording them here is data rather than a claim that Adore Me
+  publishes an API well-known surface. Both are saved verbatim.
+hosts_probed:
+- https://adoreme.com
+- https://www.adoreme.com
+- https://creators.adoreme.com
+- https://blog.adoreme.com
+- https://status.adoreme.com
+- https://help.adoreme.com
+transport_note: >-
+  www.adoreme.com sits behind Cloudflare bot management and answers HTTP/2 requests from
+  non-browser clients with a 403 challenge page on every path, including /robots.txt.
+  Every probe recorded here was made over HTTP/1.1 with a browser User-Agent, which the
+  edge serves normally. The 403 is an ordinary edge policy, not a missing document.
+hosts:
+- host: https://www.adoreme.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+  - path: /.well-known/change-password
+    status: 404
+  - path: /.well-known/dnt-policy.txt
+    status: 404
+  - path: /.well-known/assetlinks.json
+    status: 200
+    file: adore-me-assetlinks.json
+    content_type: application/json
+    note: Android App Links / Smart Lock association for package com.adoreme.android.
+  - path: /.well-known/apple-app-site-association
+    status: 200
+    file: adore-me-apple-app-site-association.json
+    content_type: application/octet-stream
+    note: Apple Universal Links / webcredentials association for XSW8SB63M8.com.adoreme.qmobile.
+- host: https://adoreme.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+other_hosts:
+- host: https://creators.adoreme.com
+  note: Brand-ambassador portal. Every /.well-known/* path returns a 404 HTML page.
+- host: https://blog.adoreme.com
+  note: >-
+    REJECTED as a false positive. This Next.js single-page app answers HTTP 200 with a
+    ~600KB HTML shell for every path probed, including /.well-known/agent-card.json,
+    /.well-known/api-catalog and /openapi.json. No document here was recorded.
+- host: https://status.adoreme.com
+  note: >-
+    302 redirect to https://adoreme.statuspage.io. The Atlassian Statuspage API v2
+    (/api/v2/status.json, summary.json, components.json) answers HTTP 200 with real JSON
+    on the statuspage.io host; it is Atlassian's contract, not Adore Me's, and is
+    recorded in lifecycle/adore-me-lifecycle.yml rather than as an Adore Me API.
+- host: https://help.adoreme.com
+  note: Zendesk-hosted help center (adoreme.zendesk.com). No first-party well-known documents.
+x-evidence:
+- url: https://www.adoreme.com/.well-known/assetlinks.json
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://www.adoreme.com/.well-known/apple-app-site-association
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://www.adoreme.com/.well-known/security.txt
+  http_status: 404
+  fetched: '2026-09-07'
+- url: https://www.adoreme.com/.well-known/api-catalog
+  http_status: 404
+  fetched: '2026-09-07'

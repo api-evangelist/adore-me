@@ -1,0 +1,89 @@
+generated: '2026-09-07'
+method: searched
+source: https://status.adoreme.com/
+status_page: https://status.adoreme.com/
+status_page_canonical: https://adoreme.statuspage.io/
+status_page_provider: Atlassian Statuspage
+status_page_machine_readable:
+  api: Atlassian Statuspage API v2
+  endpoints:
+  - https://adoreme.statuspage.io/api/v2/status.json
+  - https://adoreme.statuspage.io/api/v2/summary.json
+  - https://adoreme.statuspage.io/api/v2/components.json
+  note: >-
+    These endpoints answer HTTP 200 with real JSON anonymously, but they are Atlassian's
+    contract served on Atlassian's host, not an Adore Me API. They are recorded here as
+    the machine-readable face of the status page, and no OpenAPI or API entry is derived
+    from them. Note the same paths under status.adoreme.com return 403 — the Cloudflare
+    edge in front of the CNAME challenges non-browser clients.
+  page_id: n57jvx9zqb5y
+  page_name: Adore Me Inc
+status_page_components:
+- name: Website
+  status: operational
+- name: Mobile Applications
+  status: operational
+- name: Internal Tools
+  status: operational
+  description: Admins, dashboards etc.
+- name: Autocharge
+  status: operational
+status_page_currency:
+  page_updated_at: '2022-11-18T14:24:08.020Z'
+  components_created_at: '2022-11-18T13:20:00.237Z'
+  note: >-
+    Every component was created on 2022-11-18 — two and a half weeks after Victoria's
+    Secret & Co. announced the acquisition — and the page's updated_at has not moved
+    since. The page is live and all four components read operational, but nothing has
+    been posted to it in the observed history, so it should be read as a standing
+    dashboard rather than an actively maintained incident channel.
+incidents:
+  count: 0
+  window_observed: '2022-11-18 through 2026-09-07 (the full page history returned by the API)'
+  scheduled_maintenances: 0
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: >-
+    Adore Me publishes no public API and therefore no public API versioning policy. The
+    storefront's own internal JSON backend is mounted under /api/v1 and /api/v2, which
+    indicates an internally versioned surface, but neither is documented and both reject
+    every unauthenticated request with a 400 validation_error.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: >-
+    No deprecation policy and no RFC 8594 Sunset/Deprecation header surface is published.
+    No `Deprecation` pointer is wired in apis.yml.
+sla:
+  url: null
+  uptime_target: null
+  note: No SLA or uptime target is published.
+product_lifecycle:
+  note: >-
+    The consumer product line does carry dated wind-down notices, which is the closest
+    thing Adore Me publishes to a deprecation communication. The site's own sitemap lists
+    /elite-box-ending and /elite-box-ending-international, retiring the Elite Box home
+    try-on subscription that the brand was built on.
+  entries:
+  - name: Elite Box (home try-on subscription)
+    state: ending
+    url: https://www.adoreme.com/elite-box-ending
+  - name: Elite Box (international)
+    state: ending
+    url: https://www.adoreme.com/elite-box-ending-international
+deprecated_operations: []
+x-evidence:
+- url: https://status.adoreme.com/
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://adoreme.statuspage.io/api/v2/components.json
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://adoreme.statuspage.io/api/v2/summary.json
+  http_status: 200
+  fetched: '2026-09-07'
+- url: https://status.adoreme.com/api/v2/status.json
+  http_status: 403
+  fetched: '2026-09-07'

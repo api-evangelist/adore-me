@@ -1,17 +1,42 @@
 aid: adore-me
 name: Adore Me
-description: 'Adore Me is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Adore Me is a New York City based direct-to-consumer intimate apparel brand
+  founded in 2011 by Morgan Hermand-Waiche, selling bras, panties, lingerie sets, sleepwear,
+  swimwear, activewear and loungewear across an inclusive size range (bands 30-46, cups
+  A-I, apparel XS-4X) through adoreme.com, native iOS and Android apps, and a small
+  physical retail footprint. The company built a proprietary e-commerce and merchandising
+  platform rather than buying a hosted storefront, and is known for the Elite Box home
+  try-on program, an annual Premier membership, and published environmental, social and
+  governance impact reporting. Victoria''s Secret & Co. acquired Adore Me for $400 million
+  in cash, signing on 1 November 2022 and closing on 3 January 2023; Adore Me continues to
+  operate as its own brand and its technology is being used to modernize the VS&Co digital
+  platform. Adore Me operates no public developer program: it publishes no developer portal,
+  no API reference, and no machine-readable API contract of any kind. Its storefront JSON
+  backend under /api/ is an undocumented internal surface that rejects every unauthenticated
+  request with a validation error. The public technical surface enrichment could verify is a
+  well-formed provider-authored llms.txt covering the whole catalog, mobile app-association
+  documents at /.well-known/, an Atlassian Statuspage, and a Bugcrowd vulnerability
+  disclosure program.'
+image: https://www.adoreme.com/assets/favicon/apple-touch-icon.png
 url: https://raw.githubusercontent.com/api-evangelist/adore-me/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-09-07'
 modified: '2026-09-07'
 tags:
 - Company
+- E-Commerce
+- Retail
+- Apparel
+- Intimate Apparel
+- Direct to Consumer
+- Fashion
+- Consumer
+- Subscription Commerce
+- Mobile
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +44,67 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/adore-me-domain-security.yml
 - type: Website
+  url: https://www.adoreme.com/
+- type: Blog
+  url: https://www.adoreme.com/blog
+- type: Support
+  url: https://help.adoreme.com/
+- type: TermsOfService
+  url: https://www.adoreme.com/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.adoreme.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/adore-me
+- type: StatusPage
+  url: https://status.adoreme.com/
+- type: Security
+  url: https://bugcrowd.com/adoreme-vdp
+- type: Press
+  url: https://www.adoreme.com/press
+- type: About
+  url: https://www.adoreme.com/our-story
+- type: iOSApp
+  url: https://apps.apple.com/us/app/adore-me-lingerie-womenswear/id661053119
+- type: AndroidApp
+  url: https://play.google.com/store/apps/details?id=com.adoreme.android
+- type: SecondaryMarket
   url: https://forgeglobal.com/adore-me_stock/
+- type: LLMsTxt
+  url: llms/adore-me-llms.txt
+- type: Lifecycle
+  url: lifecycle/adore-me-lifecycle.yml
+- type: Packages
+  url: packages/adore-me-packages.yml
+- type: Plans
+  url: plans/adore-me-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/adore-me-rate-limits.yml
+- type: VulnerabilityDisclosure
+  url: security/adore-me-vulnerability-disclosure.yml
+x-enrichment:
+  date: '2026-09-07'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Adore Me is a direct-to-consumer lingerie retailer with no developer program at all —
+    no api./developer./docs. host resolves, the sitemap lists 67 pages that are entirely
+    consumer retail content, and the storefront's own /api/v1 backend answers every
+    unauthenticated request with the same 400 validation_error envelope while publishing
+    no contract that describes it.
+  evidence:
+  - url: https://www.adoreme.com/api/v1
+    status: 400
+  - url: https://www.adoreme.com/.well-known/api-catalog
+    status: 404
+  - url: https://www.adoreme.com/v7/sitemap/pages.xml
+    status: 200
+  - url: https://developer.adoreme.com/
+    status: 0
+  checked: '2026-09-07'

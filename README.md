@@ -64,5 +64,25 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Adore Me is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
+Adore Me is a New York City based direct-to-consumer intimate apparel brand founded in 2011 by
+Morgan Hermand-Waiche, selling bras, panties, lingerie sets, sleepwear, swimwear and loungewear
+across an inclusive size range through adoreme.com, native iOS and Android apps, and a small
+physical retail footprint. Victoria's Secret & Co. acquired the company for $400 million in cash,
+signing on 1 November 2022 and closing on 3 January 2023; Adore Me continues to operate as its own
+brand.
+
+Adore Me operates **no public developer program** — no developer portal, no API reference, and no
+machine-readable API contract of any kind. Its storefront JSON backend under `/api/` is an
+undocumented internal surface that rejects every unauthenticated request with a validation error.
+The public technical surface this profile could verify is:
+
+- a well-formed, provider-authored [`llms.txt`](https://www.adoreme.com/llms.txt) covering the
+  whole catalog (saved verbatim in `llms/`)
+- mobile app-association documents at `/.well-known/assetlinks.json` and
+  `/.well-known/apple-app-site-association`
+- an Atlassian [status page](https://status.adoreme.com/) with a machine-readable Statuspage API v2
+- a Bugcrowd [vulnerability disclosure program](https://bugcrowd.com/adoreme-vdp), which is *not*
+  advertised in an RFC 9116 `security.txt`
+
+- https://www.adoreme.com/
 - https://forgeglobal.com/adore-me_stock/

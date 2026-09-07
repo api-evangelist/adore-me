@@ -1,0 +1,46 @@
+generated: '2026-09-07'
+method: probed
+source: >-
+  live probes of https://www.adoreme.com/api/v1 and the adoreme.com public site on
+  2026-09-07; no developer documentation exists to search
+limit_count: 0
+note: >-
+  Adore Me publishes no API rate limits, because it publishes no API. limit_count is 0.
+  The storefront's undocumented internal JSON backend under /api/ was probed
+  unauthenticated and returned no rate-limit signaling of any kind — no X-RateLimit-*,
+  no RFC 9331 RateLimit-* and no Retry-After header — on any response observed.
+rate_limits: []
+headers_observed: []
+headers:
+  x_ratelimit_family: null
+  ratelimit_family: null
+  retry_after: null
+  exhaustion_status: null
+observed_backend:
+  path: /api/v1
+  host: www.adoreme.com
+  status: 400
+  content_type: application/json
+  body: '{"error":{"code":400,"message":"Bad request.","errors":["Bad request."],"error_code":"validation_error"}}'
+  note: >-
+    Every path probed under /api/ — including /api/v1, /api/v2, /api/docs and
+    /api/openapi.json — returns the same 400 validation_error envelope. This is an
+    undocumented internal surface serving the storefront and mobile apps, not a published
+    developer API. It is recorded as an observation only: no OpenAPI, error catalog,
+    conventions or authentication artifact is derived from it, because Adore Me publishes
+    no contract describing it and inventing one would fabricate an API the company does
+    not offer.
+edge:
+  provider: Cloudflare
+  bot_management: true
+  note: >-
+    www.adoreme.com answers HTTP/2 requests from non-browser clients with a 403 challenge
+    page on every path, including /robots.txt. This is bot management, not a rate limit,
+    and no 429 was observed at any point during this pass.
+x-evidence:
+- url: https://www.adoreme.com/api/v1
+  http_status: 400
+  fetched: '2026-09-07'
+- url: https://www.adoreme.com/robots.txt
+  http_status: 200
+  fetched: '2026-09-07'
