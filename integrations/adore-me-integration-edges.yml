@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/adore-me/integrations
+- https://n8n.io/integrations/adore-me/
+- https://composio.dev/toolkits/adore-me
+- https://monid.ai/tools/adore-me
+checked:
+- https://composio.dev/toolkits/adore-me
+- https://monid.ai/tools/adore-me
+- https://n8n.io/integrations/adore-me/
+- https://zapier.com/apps/adore-me/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
