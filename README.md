@@ -64,25 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Adore Me is a New York City based direct-to-consumer intimate apparel brand founded in 2011 by
-Morgan Hermand-Waiche, selling bras, panties, lingerie sets, sleepwear, swimwear and loungewear
-across an inclusive size range through adoreme.com, native iOS and Android apps, and a small
-physical retail footprint. Victoria's Secret & Co. acquired the company for $400 million in cash,
-signing on 1 November 2022 and closing on 3 January 2023; Adore Me continues to operate as its own
-brand.
+Adore Me is a New York City based direct-to-consumer intimate apparel brand founded in 2011 by Morgan Hermand-Waiche, selling bras, panties, lingerie sets, sleepwear, swimwear, activewear and loungewear across an inclusive size range (bands 30-46, cups A-I, apparel XS-4X) through adoreme.com, native iOS and Android apps, and a small physical retail footprint. The company built a proprietary e-commerce and merchandising platform rather than buying a hosted storefront, and is known for the Elite Box home try-on program, an annual Premier membership, and published environmental, social and governance impact reporting. Victoria's Secret & Co. acquired Adore Me for $400 million in cash, signing on 1 November 2022 and closing on 3 January 2023; Adore Me continues to operate as its own brand and its technology is being used to modernize the VS&Co digital platform. Adore Me operates no public developer program: it publishes no developer portal, no API reference, and no machine-readable API contract of any kind. Its storefront JSON backend under /api/ is an undocumented internal surface that rejects every unauthenticated request with a validation error. The public technical surface enrichment could verify is a well-formed provider-authored llms.txt covering the whole catalog, mobile app-association documents at /.well-known/, an Atlassian Statuspage, and a Bugcrowd vulnerability disclosure program.
 
-Adore Me operates **no public developer program** — no developer portal, no API reference, and no
-machine-readable API contract of any kind. Its storefront JSON backend under `/api/` is an
-undocumented internal surface that rejects every unauthenticated request with a validation error.
-The public technical surface this profile could verify is:
+**Areas:** Company · E-Commerce · Retail · Apparel · Intimate Apparel · Direct to Consumer · Fashion · Consumer · Subscription Commerce · Mobile
 
-- a well-formed, provider-authored [`llms.txt`](https://www.adoreme.com/llms.txt) covering the
-  whole catalog (saved verbatim in `llms/`)
-- mobile app-association documents at `/.well-known/assetlinks.json` and
-  `/.well-known/apple-app-site-association`
-- an Atlassian [status page](https://status.adoreme.com/) with a machine-readable Statuspage API v2
-- a Bugcrowd [vulnerability disclosure program](https://bugcrowd.com/adoreme-vdp), which is *not*
-  advertised in an RFC 9116 `security.txt`
+## Adore Me on APIs.io
 
-- https://www.adoreme.com/
-- https://forgeglobal.com/adore-me_stock/
+Everything profiled for Adore Me is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/adore-me/](https://apis.io/providers/adore-me/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Adore Me Domain Security](https://apis.io/security/adore-me/adore-me-domain-security/)
+- [Adore Me Vulnerability Disclosure](https://apis.io/security/adore-me/adore-me-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Adore Me Plans Pricing](https://apis.io/plans/adore-me/adore-me-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Adore Me Rate Limits](https://apis.io/rate-limits/adore-me/adore-me-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.adoreme.com/)
+- [Support](https://help.adoreme.com/)
+- [Blog](https://www.adoreme.com/blog)
+- [Security](https://bugcrowd.com/adoreme-vdp)
+- [Terms of service](https://www.adoreme.com/terms-conditions)
+- [Privacy policy](https://www.adoreme.com/privacy-policy)
+- [GitHub](https://github.com/adore-me)
+- [Status](https://status.adoreme.com/)
+
+## API Evangelist rating
+
+**Kin Score 8.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 0.0 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/adore-me/](https://apis.io/providers/adore-me/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Adore Me: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/adore-me/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
